@@ -1,5 +1,5 @@
 # DLLsForHackers
-Dlls that can be used for side loading and other attack vector.
+Dlls that can be used for side loading and other attack vectors.
 
 # Why?
 
