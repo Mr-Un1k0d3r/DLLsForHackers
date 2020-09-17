@@ -1,5 +1,5 @@
 # DLLsForHackers
-Dlls that can be used for side loading and other attack vectors.
+Dlls that can be used for side loading and other attack vectors. This Dll will not cause deadlock since it only use functions that are `DllMain` safe as described below.
 
 # Why?
 
