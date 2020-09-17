@@ -74,14 +74,14 @@ DLLsForHackers Mr.Un1k0d3r RingZer0 Team
 
 * Exec (exec.c)
 ```
-mingw32-g++.exe -Wall -DBUILD_DLL -O2  -c exec.c -o exec.o
-mingw32-g++.exe -shared -Wl,--dll  exec.o  -o exec.dll
+mingw32-g++.exe -Wall -DBUILD_DLL -O2 -c exec.c -o exec.o
+mingw32-g++.exe -shared -Wl,--dll  exec.o -o exec.dll
 ```
 
 * Drop Exec (dropexec.c)
 ```
-mingw32-g++.exe -Wall -DBUILD_DLL -O2  -c dropexec.c -o dropexec.o
-mingw32-g++.exe -shared -Wl,--dll  dropexec.o  -o dropexec.dll
+mingw32-g++.exe -Wall -DBUILD_DLL -O2 -c dropexec.c -o dropexec.o
+mingw32-g++.exe -shared -Wl,--dll  dropexec.o -o dropexec.dll
 ```
 
 # Credit
