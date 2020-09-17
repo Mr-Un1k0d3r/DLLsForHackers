@@ -33,10 +33,7 @@ You should never perform the following tasks from within DllMain:
 *    Call functions in Kernel32.dll (except the functions that are listed above).
 *    Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
 
-# Content
-
-* Write file dll that lead to RCE
-* Information leak via HTTP request
+# Usage
 
 # Compile it using GCC
 
