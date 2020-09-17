@@ -38,6 +38,14 @@ You should never perform the following tasks from within DllMain:
 * Write file dll that lead to RCE
 * Information leak via HTTP request
 
+# Compile it using GCC
+
+* Net DLL (net.c)
+```
+mingw32-g++.exe -Wall -DBUILD_DLL -O2  -c net.dll -o net.o
+mingw32-g++.exe -shared -Wl,--dll  net.o  -o net.dll -lwininet
+```
+
 # Credit
 
 Mr.Un1k0d3r RingZer0 Team
