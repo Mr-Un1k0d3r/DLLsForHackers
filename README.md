@@ -3,7 +3,7 @@ Dlls that can be used for side loading and other attack vectors. This Dll will n
 
 # Why?
 
-I've seen to many POC with code been executed in the `DLL_PROCESS_ATTACH`. In fact most of the of the time the malcious code will not work as stated by Microsoft (https://docs.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-best-practices).
+I've seen too many POC with code been executed in the `DLL_PROCESS_ATTACH`. In fact most of the time the malcious code will not work as stated by Microsoft (https://docs.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-best-practices).
 
 You should never perform the following tasks from within DllMain:
 
