@@ -33,6 +33,19 @@ You should never perform the following tasks from within DllMain:
 *    Call functions in Kernel32.dll (except the functions that are listed above).
 *    Set global pointers to NULL, putting off the initialization of dynamic members. In Microsoft Windows Vista™, you can use the one-time initialization functions to ensure that a block of code is executed only once in a multithreaded environment.
 
+# Why using msvcrt!system
+
+As stated by Microsoft calling CreateProcess should be avoided `Creating a process can load another DLL.`. However, for all my test `system()` call stack seems to be safe. For reference here is the `system()` call stack:
+
+```
+int __cdecl system(const char *Command)
+    intptr_t __cdecl spawnvpe(int Mode, const char *Filename, const char *const *ArgList, const char *const *Env)
+        intptr_t __cdecl spawnve(int Mode, const char *Filename, const char *const *ArgList, const char *const *Env)
+            signed __int64 __fastcall comexecmd_0(unsigned int a1, __int64 a2, __int64 a3, __int64 a4)
+                signed __int64 __fastcall dospawn(signed int a1, const CHAR *a2, __int64 a3, void *a4)
+                    BOOL __stdcall CreateProcessA(LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation)          
+```
+
 # Usage
 
 ```
